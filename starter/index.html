@@ -40,41 +40,41 @@
 				<form>
 					<div class="mb-3">
 						<label class="form-label">Title</label>
-						<input type="text" class="form-control" id="username" name="username" placeholder="Title" />
+						<input type="text" class="form-control" id="ttitle" name="username" placeholder="Title" />
 					</div>
 					<div class="form-check">
-						<input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>
+						<input type="radio" class="form-check-input"  id="feature" name="optradio" value="option1" checked>
 						<label class="form-check-label" for="radio1">Feature</label>
 					  </div>
 					  <div class="form-check mb-3">
-						<input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+						<input type="radio" class="form-check-input" id="bug" name="optradio" value="option2">
 						<label class="form-check-label" for="radio2">Bug</label>
 					  </div>
              
               <label class="form-check-label">Preority</label>
 
-					  <select class="form-select mb-3 " aria-label="Default select example">
+					  <select class="form-select mb-3 " id="preo" aria-label="Default select example">
 						<label class="form-check-label" for="radio1">Preority</label>
 						<option selected>Please Select</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+						<option value="1">high</option>
+						<option value="2">medium</option>
+						<option value="3">low</option>
 					  </select>
 
-					  <label class="form-check-label">Status</label>
-					  <select class="form-select" aria-label="Default select example">
+					  <label class="form-check-label" id="stat">Status</label>
+					  <select  id="status"  class="form-select" aria-label="Default select example">
 						<label class="form-check-label" for="radio1">Status</label>
 						<option selected>Please Select</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+						<option value="1">To Do</option>
+						<option value="2">In Progress</option>
+						<option value="3">Done</option>
 					  </select>
 					  
 
-					  <div class="form-group mb-3">
+					  <!-- <div class="form-group mb-3 ">
 						<label for="date" class="col-sm-1 col-form-label">Date</label>
-						<div class="col-sm-4">
-							<div class="input-group date" id="datepicker">
+						<div class="col-sm-4 w-100">
+							<div class=" input-group date" id="datepicker">
 								<input type="text" class="form-control">
 								<span class="input-group-append">
 									<span class="input-group-text bg-white d-block">
@@ -83,18 +83,26 @@
 								</span>
 							</div>
 						</div>
-					</div>
+					</div> -->
+					<input id="date" type="date" style="width: w-100 ;">
 
 					</div>
 
 					<textarea class="mb-3" id="w3review" name="w3review" rows="4" cols="50" >Description</textarea>
 				
-					<button class="btn-xl  "style="border:none;">
+					<!-- <button class="btn-xl  "style="border:none;">
 						<span class="badge bg-secondary">Cancel</span>
 						<span class="badge bg-primary">Save</span>
 						
-					</button>
+					</button> -->
+					
+					<!-- onclick="save() -->
 
+					<!-- <input type="submit" value="Save" id="ok" >  -->
+					<div  class="modal-footer">
+						<button  type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button id="ok" type="submit" class="btn btn-primary">Save changes</button>
+					  </div>
 					
 				</form>
 
@@ -161,7 +169,7 @@
 									<i class="bi bi-question-circle  text-success fs-2 "></i> 
 								</div>
 								<div class="text-start">
-									<div class="fw-bolder">Keep all the updated requirements in one place</div>
+									<div class="fw-bolder" id="zaa">Keep all the updated requirements in one place</div>
 									<div class="start-10">
 										<div class="fw-light">#1 created in 2022-10-08</div>
 										<div class="fw-bold" title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly.">There is hardly anything more frustrating than having t...</div>
@@ -249,6 +257,7 @@
 							<h4 class="  text-white ">In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
 
 						</div>
+		<!---->				
 						<div class="card-body" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
 							<button class="btn d-flex p-0 border-bottom ">
@@ -435,6 +444,10 @@
 	<script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
+
+
+	<script src="front.js"></script>
+	
 	<!-- ================== END core-js ================== -->
 </body>
 </html>
