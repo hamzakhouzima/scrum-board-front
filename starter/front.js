@@ -36,7 +36,7 @@ let task =  {
             checked         :  checked,
             date          :  date.value,
             description   :  description.value,
-            todo,
+            todo          : todo.value,
             preor
 
             
@@ -54,33 +54,29 @@ let task =  {
 
 
 
-function displayInputs(title){
+function displayInputs(){
+  
 
-var htmloutput = ` <button class="btn d-flex p-0  border-bottom" >
-<div class="start p-2">
-    <i class="bi bi-question-circle  text-success fs-2 "></i> 
-</div>
-<div class="text-start">
-    <div class="fw-bolder" id="zaa">${title}</div>
-    <div class="start-10">
-        <div class="fw-light">#1 created in 2022-10-08</div>
-        <div class="fw-bold" title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly.">There is hardly anything more frustrating than having t...</div>
-    </div>
-    <div class="">
-        <span class="badge bg-primary">High</span>
-        <span class="badge bg-secondary">Feature</span>
-    </div>
-</div>
-</button>`;
-if (sstatus == "To Do") {
-  $(htmloutput).appendTo("#to-do-tasks");
-} else if (sstatus == "In Progress") {
-  $(htmloutput).appendTo("#in-progress-tasks");
-} else if (sstatus == "Done") {
-  $(htmloutput).appendTo("#done-tasks");
+for (let index = 0; index < tasks.length; index++) {
+      document.getElementById(`${tasks.todo}`).innerHTML += `<button class="btn d-flex p-0  border-bottom">
+      <div class="start p-2">
+        <i class="bi bi-question-circle  text-success fs-2 "></i> 
+      </div>
+      <div class="text-start">
+        <div class="fw-bolder" id="zaa">${tasks[index].title}</div>
+        <div class="start-10">
+          <div class="fw-light">#1 created in ${tasks[index].date}</div>
+          <div class="fw-bold" title="">${tasks[index].description}</div>
+        </div>
+        <div class="">
+          <span class="badge bg-primary">${tasks[index].preor}</span>
+          <span class="badge bg-secondary">${tasks[index].checked}</span>
+        </div>
+      </div>
+      </button>`;
+      
+        
 }
-
-
 
  }
    
@@ -90,7 +86,8 @@ if (sstatus == "To Do") {
 
   addInputs()
 
-  // displayInputs(title)
+  
+  displayInputs()
 
 
 

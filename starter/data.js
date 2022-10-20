@@ -1,2 +1,1 @@
-// var tach=[];
-// console.log("hazhaoihe");
+ var tasks=[];
