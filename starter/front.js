@@ -5,7 +5,8 @@
 var tasks=[];
 
 function addInputs(){
-   let form = document.querySelector("#modalForm");
+  let form = document.querySelector("#modalForm");
+ 
     form.addEventListener('submit', (e) => {
 
       // to stop reload fo page
@@ -37,28 +38,29 @@ let task =  {
             date          :  date.value,
             description   :  description.value,
             todo          : todo.value,
-            preor
-
-            
+            preor     
       }
        tasks.push(task);
-      const onConfirmRefresh = function (event) {
-        event.preventDefault();
-      }
-       console.log(tasks);
-     
-      }) 
+       displayInputs()
 
-      }
+})
 
-
+}
 
 
 function displayInputs(){
-  
+  let task_status="";
 
 for (let index = 0; index < tasks.length; index++) {
-      document.getElementById(`${tasks.todo}`).innerHTML += `<button class="btn d-flex p-0  border-bottom">
+  if(tasks[index].status==="to-do"){
+    task_status=document.querySelector("#to-do");
+  }else if(tasks[index].status==="doing"){
+    task_status=document.querySelector("#doing");
+  }else if(tasks[index].status==="done"){
+    task_status=document.querySelector("#done-tasks");
+  }
+  // `${tasks.todo}`
+       task_status.innerHTML += `<button class="btn d-flex p-0  border-bottom"> 
       <div class="start p-2">
         <i class="bi bi-question-circle  text-success fs-2 "></i> 
       </div>
@@ -77,6 +79,7 @@ for (let index = 0; index < tasks.length; index++) {
       
         
 }
+
 
  }
    
