@@ -10,21 +10,22 @@ function addInputs(){
     form.addEventListener('submit', (e) => {
 
       // to stop reload fo page
-      e.preventDefault();
+     
 
-    let title = document.getElementById('ttitle');
-    let preority = document.getElementById('preo');
-    let date=document.getElementById('date');
+    let title = document.getElementById('title-block');
+    let preority = document.getElementById('preority-block');
+    let date=document.getElementById('date-block');
+    let status=document.getElementById('status-block');
+    let description = document.getElementById('w3review');
+    let preority_select = preority.options[preority.selectedIndex].text;
 
-    let preor = preority.options[preority.selectedIndex].text;
     // let type = document.querySelector('input[name="type"]:checked').value;
 
-    let sstatus=document.getElementById('status');
-    let todo = sstatus.options[sstatus.selectedIndex].text;
-    let description = document.getElementById('w3review');
+    let task_type = status.options[status.selectedIndex].value; 
+    // let task_type = document.getElementById('status-test').value;
     
   
-  if(bug.checked){
+if(bug.checked){
  checked="bug";
  }
 else if(feature.checked){
@@ -32,17 +33,17 @@ else if(feature.checked){
 }
 
 let task =  {
-      
-            title         :  title.value ,
-            checked         :  checked,
-            date          :  date.value,
-            description   :  description.value,
-            todo          : todo.value,
-            preor     
-      }
+    title         :  title.value ,
+    checked       :  checked,
+    date          :  date.value,
+    description   :  description.value,
+    task_type     :  task_type,
+    preority_select     
+}
        tasks.push(task);
-       displayInputs()
-
+       console.log(tasks)
+       displayInputs();
+       e.preventDefault();
 })
 
 }
@@ -51,14 +52,21 @@ let task =  {
 function displayInputs(){
   let task_status="";
 
+  document.getElementById("to-do").innerHTML = "";
+  document.getElementById("doing").innerHTML = "";
+  document.getElementById("done-tasks").innerHTML = "";
+
+  console.log('start')
 for (let index = 0; index < tasks.length; index++) {
-  if(tasks[index].status==="to-do"){
-    task_status=document.querySelector("#to-do");
-  }else if(tasks[index].status==="doing"){
-    task_status=document.querySelector("#doing");
-  }else if(tasks[index].status==="done"){
-    task_status=document.querySelector("#done-tasks");
-  }
+//   console.log(tasks[index].todo);
+    if(tasks[index].task_type =="to-do"){ 
+        task_status=document.getElementById("to-do");
+    }else if(tasks[index].task_type =="doing"){
+        task_status=document.getElementById("doing");
+    }else if(tasks[index].task_type =="done"){
+        task_status=document.getElementById("done-tasks");
+    }
+
   // `${tasks.todo}`
        task_status.innerHTML += `<button class="btn d-flex p-0  border-bottom"> 
       <div class="start p-2">
@@ -71,7 +79,7 @@ for (let index = 0; index < tasks.length; index++) {
           <div class="fw-bold" title="">${tasks[index].description}</div>
         </div>
         <div class="">
-          <span class="badge bg-primary">${tasks[index].preor}</span>
+          <span class="badge bg-primary">${tasks[index].preority_select}</span>
           <span class="badge bg-secondary">${tasks[index].checked}</span>
         </div>
       </div>
@@ -87,10 +95,10 @@ for (let index = 0; index < tasks.length; index++) {
 
 
 
-  addInputs()
-
   
-  displayInputs()
+
+ addInputs()
+ //displayInputs()
 
 
 
