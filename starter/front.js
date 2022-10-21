@@ -43,6 +43,7 @@ let task =  {
        tasks.push(task);
        console.log(tasks)
        displayInputs();
+       document.getElementById("myform").reset();
        e.preventDefault();
 })
 
