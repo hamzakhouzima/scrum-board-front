@@ -68,7 +68,7 @@ for (let index = 0; index < tasks.length; index++) {
     }
 
   // `${tasks.todo}`
-       task_status.innerHTML += `<button class="btn d-flex p-0  border-bottom"> 
+       task_status.innerHTML += `<button class="btn d-flex p-0 w-100 border-bottom"> 
       <div class="start p-2">
         <i class="bi bi-question-circle  text-success fs-2 "></i> 
       </div>
