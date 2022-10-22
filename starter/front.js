@@ -4,6 +4,9 @@
 
 var tasks=[];
 
+
+// ADD USER INPUTS INTO AN  ARRAY OF OBJECTS 
+
 function addInputs(){
   let form = document.querySelector("#modalForm");
  
@@ -38,7 +41,8 @@ let task =  {
     date          :  date.value,
     description   :  description.value,
     task_type     :  task_type,
-    preority_select     
+    preority_select   
+
 }
        tasks.push(task);
        console.log(tasks)
@@ -49,6 +53,7 @@ let task =  {
 
 }
 
+//DISPLAY THE PREVIOUS INPUTS IN BROWSER PAGE USING A PUSHED HTML CODE 
 
 function displayInputs(){
   let task_status="";
@@ -82,17 +87,33 @@ for (let index = 0; index < tasks.length; index++) {
         <div class="">
           <span class="badge bg-primary">${tasks[index].preority_select}</span>
           <span class="badge bg-secondary">${tasks[index].checked}</span>
-        </div>
+          <button class="btn btn-danger btn-sm rounded-0 border-bottom" type="button" data-toggle="tooltip" data-placement="top" title="Delete" onclick="deleteTask(${index})"><i class="fa fa-trash"></i></button>
+          <button class="btn btn-success btn-sm rounded-0 border-bottom" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+          </div>
       </div>
       </button>`;
-      
-        
+             
 }
-
 
  }
    
+// DELETE FUNCTION 
+function deleteTask(index){
 
+  tasks.splice(index,1);
+
+  displayInputs()
+
+
+
+}
+function editTask(index){
+  
+
+
+
+
+}
 
 
 
@@ -120,43 +141,3 @@ for (let index = 0; index < tasks.length; index++) {
 
 
 
-// function savedata(){
-
-    
-//     let title = document.getElementById('task-title').value;
-//     let bug = document.querySelector('#check').checked;
-//     let Feature = document.querySelector('#check').checked;
-
-
-//     // document.getElementById('check1').value;
-
-//     let preority = document.getElementById('preo').value;
-//     let status=document.getElementById('status').value;
-//     //let date = document.getElementById('').value;
-//     let content = document.getElementById('w3review').value;
-   
-
-
-//     // theTitle[theTitle.length]=title;  
-//     // // theDate[theDate.length]=date ; 
-//     // thePreority[thePreority.length]=preority;
-//     // theContent[theContent.length]=content;
-//     // theBugFeature[theBugFeature.length]=bugFeature;
-//     // theStatus[theStatus.length]=status;
-
-
-//     console.log(title,bugFeature,preority,status,content);
-     
-   
-//   }
-
-
-   
- 
-// function displayData() 
-// {
-//   let contenu="TTT"; // you need to  change the letiable name "hamza"
-//   contenu+= [...theTitle]+"</br>";
-  
-//   document.getElementById('zaa').innerHTML = contenu; //theTitle is the id from modal html  "hamza"
-// }  
