@@ -41,7 +41,7 @@ let task =  {
     date          :  date.value,
     description   :  description.value,
     task_type     :  task_type,
-    preority_select   
+    preority_select 
 
 }
        tasks.push(task);
@@ -111,18 +111,23 @@ function deleteTask(index){
 function editTask(index){
     title=tasks[index].title;
     checked=tasks[index].checked;
-    date=tasks[index];
-    description=tasks[index];
-    preority_select=tasks[index];
-
+    date=tasks[index].date;
+    description=tasks[index].description;
+    preority_select=tasks[index].preority_select;
+    task_type =tasks[index].task_type; 
+    
 
     let form=document.forms["edit"];
     form.username.value=title;
-    form.preor.value=preority_select
+    form.preority_select.value=preority_select;
     form.date.value=date;
     form.w3review.value=description;
+    form.task_type.value= task_type;
+
+    tasks[index] =form;
 
 
+displayInputs()
    
  }
 
