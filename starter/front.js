@@ -88,7 +88,7 @@ for (let index = 0; index < tasks.length; index++) {
           <span class="badge bg-primary">${tasks[index].preority_select}</span>
           <span class="badge bg-secondary">${tasks[index].checked}</span>
           <button class="btn btn-danger btn-sm rounded-0 border-bottom" type="button" data-toggle="tooltip" data-placement="top" title="Delete" onclick="deleteTask(${index})"><i class="fa fa-trash"></i></button>
-          <button class="btn btn-success btn-sm rounded-0 border-bottom" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+          <button class="btn btn-success btn-sm rounded-0 border-bottom" type="button" data-bs-toggle="modal" data-bs-target="#modalForm" title="Edit" onclick="editTask(${index})"><i class="fa fa-edit"></i></button>
           </div>
       </div>
       </button>`;
@@ -107,13 +107,24 @@ function deleteTask(index){
 
 
 }
+
 function editTask(index){
-  
+    title=tasks[index].title;
+    checked=tasks[index].checked;
+    date=tasks[index];
+    description=tasks[index];
+    preority_select=tasks[index];
 
 
+    let form=document.forms["edit"];
+    form.username.value=title;
+    form.preor.value=preority_select
+    form.date.value=date;
+    form.w3review.value=description;
 
 
-}
+   
+ }
 
 
 
