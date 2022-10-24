@@ -79,7 +79,7 @@
 				
 					<div  class="modal-footer">
 						<button  type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button id="ok" type="submit"  class="btn btn-primary"  onclick="displayInputs()">Save changes</button>
+						<button id="ok" type="button"  class="btn btn-primary"  onclick="addInputs();">Save changes</button>
 					  </div>
 					
 				</form>
@@ -114,7 +114,8 @@
 				
 				
 					
-					<button class=" btn  btn-success  mt-5"  data-bs-toggle="modal" data-bs-target="#modalForm"><i class="bi bi-plus "></i> Add Task</a>
+					<button class=" btn  btn-success  mt-5" onclick="initAdd()"  data-bs-toggle="modal" data-bs-target="#modalForm">
+						<i class="bi bi-plus "></i> Add Task</a>
 
 					</div>
 			</div>
@@ -128,8 +129,9 @@
 
 
 						</div>
-						<div class=" card-body p-0 bg-light " id="to-do">
+						<div class=" card-body " id="to-do">
 							<!-- TO DO TASKS HERE -->
+							
 							
 						</div>
 					</div>
@@ -143,24 +145,7 @@
 		<!---->				
 						<div class="card-body" id="doing">
 							<!-- IN PROGRESS TASKS HERE -->
-							<button class="btn d-flex p-0 border-bottom ">
-								<div class="spinner-border text-success" role="status">
-	
-									<span class="sr-only"></span>
-							   
-						   		</div>
-								<div class="text-start">
-									<div class="fw-bolder"></div>
-									<div class="start-10">
-										<div class="fw-light"></div>
-										<div class="fw-bold" title="including as many details as possible."></div>
-									</div>
-									<div class="">
-										<span class="badge bg-primary"></span>
-										<span class="badge bg-secondary"></span>
-									</div>
-								</div>
-							</button>
+							<!-- -->
 						</div>
 					</div>
 				</div>
@@ -172,22 +157,7 @@
 						</div>
 						<div class=" card-body" id="done-tasks">
 							<!-- DONE TASKS HERE -->
-							<button class="btn d-flex p-0 border-bottom">
-								<div class="start p-2">
-									<i class="bi bi-check2-circle text-success fs-2"></i> 
-								</div>
-								<div class="text-start">
-									<div class="fw-bolder"></div>
-									<div class="start-10">
-										<div class="fw-light"></div>
-										<div class="fw-bold" title="as they can be helpful in reproducing the steps that caused the problem in the first place.">as they can be helpful in reproducing the steps that ca...</div>
-									</div>
-									<div class="">
-										<span class="badge bg-primary"></span>
-										<span class="badge bg-secondary"></span>
-									</div>
-								</div>
-							</button>
+							<!--  -->
 						</div>
 					</div>
 				</div>
