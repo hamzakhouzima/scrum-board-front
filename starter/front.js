@@ -80,7 +80,7 @@ for (let index = 0; index < tasks.length; index++) {
         <div class="text-start">
           <div class="fw-bolder" id="zaa">${tasks[index].title}</div>
           <div class="start-10">
-            <div class="fw-light">#${index+1} created in ${tasks[index].date}</div>
+            <div class="fw-light">#${index} created in ${tasks[index].date}</div>
             <div class="fw-bold" title="">${tasks[index].description}</div>
           </div>
           <div class="">
@@ -120,7 +120,7 @@ function editTask(index){
     preority_select=tasks[index].preority_select;
     task_type =tasks[index].task_type; 
     
-// 
+// show the task values in the form inputs
     let form=document.forms["edit"];
     form.username.value=title;
     form.preority_select.value=preority_select;
@@ -128,8 +128,8 @@ function editTask(index){
     form.w3review.value=description;
     form.task_type.value= task_type;
 
-
-  document.getElementById("ok").setAttribute("onclick","update("+(index) +");")
+// set the attribute "onclick" and change the event function with update instead of addInputs
+  document.getElementById("ok").setAttribute("onclick","update("+(index)+");")
 
    
  }
@@ -155,19 +155,8 @@ function editTask(index){
   }
 
   tasks[index]=task;
-
-
   displayInputs();
-
  }
-
-
-
-
-
-
-
-
 
 
 function initAdd(){
@@ -177,18 +166,7 @@ function initAdd(){
 }
 
 
-
-
-
  addInputs()
-
-  
-
- 
- //displayInputs()
-
-
-
  displayInputs();
 
 
